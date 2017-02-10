@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZsq{}\PYGZsq{}\PYGZsq{}A las variables a, b y c se le asignan distintos}
+\PYG{l+s+sd}{valores, como se muestra a continuación.\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+
+\PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{10}
+\PYG{n}{b} \PYG{o}{=} \PYG{l+m+mf}{10.0}
+\PYG{n}{c} \PYG{o}{=} \PYG{l+m+mi}{10} \PYG{o}{+} \PYG{l+m+mi}{10j}
+
+\PYG{c+c1}{\PYGZsh{} Utilice la función type() para saber de qué tipo de}
+\PYG{c+c1}{\PYGZsh{} dato se trata}
+\end{Verbatim}

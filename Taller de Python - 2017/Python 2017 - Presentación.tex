@@ -1,4 +1,5 @@
 \documentclass[10pt]{beamer}
+\hypersetup{pdfpagemode=FullScreen}
 \usepackage[spanish, es-tabla]{babel}  
 \selectlanguage{spanish}
 \usepackage[utf8]{inputenc}
@@ -16,6 +17,7 @@
 \usepackage{minted}    % Formato de python
 \usepackage{xcolor}
 \usepackage{gensymb} % Para generar ciertos símbolos en modo texto.
+
 \title{Taller de Python}
 \subtitle{Clase I}
 % \date{\today}
@@ -42,17 +44,17 @@ Para llevar a cabo las actividades propuestas, recomendamos descargar \alert{Ana
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile]{¿Qué es Python?}
+\begin{frame}{¿Qué es Python?}
 Python es un \alert{lenguaje de programación} con las siguientes características:
 
-\begin{itemize}
+\begin{itemize}[<+(1)- | alert@+>]
 	\item \texttt{Es un lenguaje interpretado},
 	\item \texttt{multiparadigma},
 	\item \texttt{fuertemente tipado}.
 \end{itemize}
 
 \begin{center}
-	¡También es muy sencillo!
+	\only<5>{¡También es muy sencillo!}
 \end{center}
 \end{frame}
 
@@ -103,7 +105,7 @@ def G():
 \end{frame}
 
 \begin{frame}[fragile]{Números}
-\begin{minted}[bgcolor=gray!25!white]{python}
+\begin{minted}{python}
 '''A las variables a, b y c se le asignan distintos 
 valores, como se muestra a continuación.'''
 
@@ -153,7 +155,7 @@ b = a[0]
 \end{frame}
 
 \begin{frame}[fragile]{Listas, tuplas y diccionarios}
-	\begin{minted}[bgcolor=gray!25!white]{python}
+	\begin{minted}{python}
 # Lista 
 list = ['a', 'b', 3, 5, 7]
 	
@@ -173,7 +175,7 @@ list[2:3]
 \begin{frame}[fragile]{Asignación de variables}
 \textbf{Softcoding} es un término que en programación hace referencia al hecho de obtener un valor o función desde una fuente externa. Es lo opuesto de \textbf{hardcoding}, término que hace referencia a programar valores y funciones en el código fuente.
 
-Evitar el hard-coding de valores comúnmente modificados es una buena práctica en progrmación.
+Evitar el hard-coding de valores comúnmente modificados es una buena práctica en programación.
 
 \alert{input()} es una función que permite que el usuario ingrese datos y asignarlos a variables definidas en el código del programa.
 	
@@ -189,7 +191,7 @@ Te = float(Te)
 
 \section{Controladores de flujo}
 \begin{frame}[fragile]{Condicionales}
-   \begin{minted}[bgcolor=gray!25!white]{python}
+   \begin{minted}{python}
 number = 23
 guess = int(input('Enter an integer : '))
 
@@ -209,7 +211,7 @@ print('Done')
 \end{frame}
 
 \begin{frame}[fragile]{Condicionales}
- \begin{minted}[bgcolor=gray!25!white]{python}
+ \begin{minted}{python}
 number = 23
 running = True # boolean
 
@@ -230,161 +232,77 @@ print('Done')
 \end{frame}
 
 \begin{frame}[fragile]{Condicionales}
-\begin{minted}[bgcolor=gray!25!white]{python}
+\begin{minted}{python}
 for i in range(1, 5):
 	print(i)
 else:
-print('The for loop is over')
+	print('The for loop is over')
 \end{minted}
+
+\begin{center}
+	¿Qué diferencia(s) supone ocupar \textbf{for} en lugar de \textbf{while}?  
+\end{center}
 \end{frame}
-\begin{frame}{Animation}
-  \begin{itemize}[<+- | alert@+>]
-    \item \alert<4>{This is\only<4>{ really} important}
-    \item Now this
-    \item And now this
-  \end{itemize}
-\end{frame}
-\begin{frame}{Figures}
-  \begin{figure}
-    \newcounter{density}
-    \setcounter{density}{20}
-    \begin{tikzpicture}
-      \def\couleur{alerted text.fg}
-      \path[coordinate] (0,0)  coordinate(A)
-                  ++( 90:5cm) coordinate(B)
-                  ++(0:5cm) coordinate(C)
-                  ++(-90:5cm) coordinate(D);
-      \draw[fill=\couleur!\thedensity] (A) -- (B) -- (C) --(D) -- cycle;
-      \foreach \x in {1,...,40}{%
-          \pgfmathsetcounter{density}{\thedensity+20}
-          \setcounter{density}{\thedensity}
-          \path[coordinate] coordinate(X) at (A){};
-          \path[coordinate] (A) -- (B) coordinate[pos=.10](A)
-                              -- (C) coordinate[pos=.10](B)
-                              -- (D) coordinate[pos=.10](C)
-                              -- (X) coordinate[pos=.10](D);
-          \draw[fill=\couleur!\thedensity] (A)--(B)--(C)-- (D) -- cycle;
-      }
-    \end{tikzpicture}
-    \caption{Rotated square from
-    \href{http://www.texample.net/tikz/examples/rotated-polygons/}{texample.net}.}
-  \end{figure}
-\end{frame}
-\begin{frame}{Tables}
-  \begin{table}
-    \caption{Largest cities in the world (source: Wikipedia)}
-    \begin{tabular}{lr}
-      \toprule
-      City & Population\\
-      \midrule
-      Mexico City & 20,116,842\\
-      Shanghai & 19,210,000\\
-      Peking & 15,796,450\\
-      Istanbul & 14,160,467\\
-      \bottomrule
-    \end{tabular}
-  \end{table}
-\end{frame}
-\begin{frame}{Blocks}
-  Three different block environments are pre-defined and may be styled with an
-  optional background color.
-
-  \begin{columns}[T,onlytextwidth]
-    \column{0.5\textwidth}
-      \begin{block}{Default}
-        Block content.
-      \end{block}
-
-      \begin{alertblock}{Alert}
-        Block content.
-      \end{alertblock}
-
-      \begin{exampleblock}{Example}
-        Block content.
-      \end{exampleblock}
-
-    \column{0.5\textwidth}
-
-      \metroset{block=fill}
-
-      \begin{block}{Default}
-        Block content.
-      \end{block}
-
-      \begin{alertblock}{Alert}
-        Block content.
-      \end{alertblock}
-
-      \begin{exampleblock}{Example}
-        Block content.
-      \end{exampleblock}
-
-  \end{columns}
-\end{frame}
-\begin{frame}{Math}
-  \begin{equation*}
-    e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
-  \end{equation*}
-\end{frame}
-\begin{frame}{Line plots}
-  \begin{figure}
-    \begin{tikzpicture}
-      \begin{axis}[
-        mlineplot,
-        width=0.9\textwidth,
-        height=6cm,
-      ]
-
-        \addplot {sin(deg(x))};
-        \addplot+[samples=100] {sin(deg(2*x))};
-
-      \end{axis}
-    \end{tikzpicture}
-  \end{figure}
-\end{frame}
-\begin{frame}{Bar charts}
-  \begin{figure}
-    \begin{tikzpicture}
-      \begin{axis}[
-        mbarplot,
-        xlabel={Foo},
-        ylabel={Bar},
-        width=0.9\textwidth,
-        height=6cm,
-      ]
-
-      \addplot plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
-      \addplot plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
-      \addplot plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
-
-      \legend{lorem, ipsum, dolor}
-
-      \end{axis}
-    \end{tikzpicture}
-  \end{figure}
-\end{frame}
-\begin{frame}{Quotes}
-  \begin{quote}
-    Veni, Vidi, Vici
-  \end{quote}
-\end{frame}
-
-{%
-\setbeamertemplate{frame footer}{My custom footer}
-\begin{frame}[fragile]{Frame footer}
-    \themename defines a custom beamer template to add a text to the footer. It can be set via
-    \begin{verbatim}\setbeamertemplate{frame footer}{My custom footer}\end{verbatim}
-\end{frame}
-}
-
-
-
-\section{Repaso}
 
 \begin{frame}[standout]
-  ¿Preguntas?
+	¿Preguntas?
 \end{frame}
 
+\section{Repaso}
+\begin{frame}{Resumen}
+	\begin{table}
+		\caption{Operadores ariméticos}
+		\begin{tabular}{lr}
+			\toprule
+			Símbolo&Interpretación\\
+			\midrule
+		$=$ &Igualdad\\
+		$+$ &Suma\\
+		$-$ &Resta\\
+		$*$ &Multiplicación\\
+		$**$&Potencia\\
+		$/$ &División\\
+		$//$&Parte entera del cociente\\
+		$\%$&Resto de la división\\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Resumen}
+	\begin{table}
+		\caption{Operadores de relación}
+		\begin{tabular}{lr}
+			\toprule
+			Símbolo&Interpretación\\
+			\midrule
+			$==$ &Igualdad\\
+			$!=$&Desigualdad\\
+			$<$ &Menor a\\
+			$>$ &Mayor a\\
+			$<=$ &Menor o igual\\
+			$>=$ &Mayor o igual\\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Resumen}
+	\begin{table}
+		\caption{Controladores de flujo.}
+		\begin{tabular}{lr}
+			\toprule
+			Controlador&Intepretación\\
+			\midrule
+			if...:&Si se cumple tal cosa, hacer...\\
+			elif...:&Si en cambio se cumple otra cosa, hacer...\\ 
+			else:&Para todos los demás casos, hacer...\\
+			for ... in ...:&Para los elementos en una lista, hacer...\\
+			while...:&Mientras se cumpla tal cosa, hacer...\\ 
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
 \appendix
 
 \begin{frame}{Enlaces de interés}
@@ -392,9 +310,9 @@ print('The for loop is over')
 		\item \alert{Comunidad Python Argentina}\\ \url{http://www.python.org.ar}
 		\item \alert{AeroPython}\\ \url{https://github.com/AeroPython}
 		\item \alert{Tutorialspoint}\\ \url{https://www.tutorialspoint.com/index.htm}
-		\item \alert{https://www.gitbook.com/book/swaroopch/byte-of-python/details}\\ \url{https://python.swaroopch.com/control_flow.html}
+		\item \alert{Byte of Python}\\ \url{https://python.swaroopch.com/control_flow.html}
 		\item \alert{Python programming}\\ \url{https://pythonprogramming.net}
 	\end{itemize}
 \end{frame}
-
+\section{Fin de la primera clase}
 \end{document}

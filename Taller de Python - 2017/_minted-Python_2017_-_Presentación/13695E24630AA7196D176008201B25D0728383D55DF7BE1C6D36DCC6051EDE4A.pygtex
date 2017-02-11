@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Lista}
+\PYG{n+nb}{list} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}a\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}b\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{7}\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{} Tupla}
+\PYG{n+nb}{tuple} \PYG{o}{=} \PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}a\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}b\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{7}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Diccionario}
+\PYG{n+nb}{dict} \PYG{o}{=} \PYG{p}{\PYGZob{}}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{l+s+s1}{\PYGZsq{}Ana\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{:}\PYG{l+s+s1}{\PYGZsq{}Bruno\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{:}\PYG{l+s+s1}{\PYGZsq{}Carlos\PYGZsq{}}\PYG{p}{\PYGZcb{}}
+
+\PYG{n+nb}{list}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Intente hacer lo mismo con la tupla}
+\PYG{n+nb}{list}
+\PYG{n+nb}{list}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{n+nb}{list}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{:}\PYG{l+m+mi}{3}\PYG{p}{]}
+\end{Verbatim}

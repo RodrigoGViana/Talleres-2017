@@ -15,6 +15,7 @@
 %---------------------------------------------------------------------------------
 \usepackage{minted}    % Formato de python
 \usepackage{xcolor}
+\usepackage{gensymb} % Para generar ciertos símbolos en modo texto.
 \title{Taller de Python}
 \subtitle{Clase I}
 % \date{\today}
@@ -90,7 +91,7 @@ def G():
 \end{frame}
 
 \section{Variables}
-\begin{frame}[fragile]{Tipos de variables}
+\begin{frame}[fragile]{Tipos de datos}
 	Python tiene cinco \alert{tipos de datos estándares}:
 	\begin{enumerate}
 		\item Números
@@ -131,90 +132,110 @@ len(a)
 b = a[0]
 2 * a 
 \end{minted}
-\end{frame}
-{
-    \metroset{titleformat frame=smallcaps}
-\begin{frame}{Small caps}
-	This frame uses the \texttt{smallcaps} titleformat.
 
-	\begin{alertblock}{Potential Problems}
-		Be aware, that not every font supports small caps. If for example you typeset your presentation with pdfTeX and the Computer Modern Sans Serif font, every text in smallcaps will be typeset with the Computer Modern Serif font instead.
-	\end{alertblock}
-\end{frame}
-}
-
-{
-\metroset{titleformat frame=allsmallcaps}
-\begin{frame}{All small caps}
-	This frame uses the \texttt{allsmallcaps} titleformat.
-
-	\begin{alertblock}{Potential problems}
-		As this titleformat also uses smallcaps you face the same problems as with the \texttt{smallcaps} titleformat. Additionally this format can cause some other problems. Please refer to the documentation if you consider using it.
-
-		As a rule of thumb: Just use it for plaintext-only titles.
-	\end{alertblock}
-\end{frame}
-}
-
-{
-\metroset{titleformat frame=allcaps}
-\begin{frame}{All caps}
-	This frame uses the \texttt{allcaps} titleformat.
-
-	\begin{alertblock}{Potential Problems}
-		This titleformat is not as problematic as the \texttt{allsmallcaps} format, but basically suffers from the same deficiencies. So please have a look at the documentation if you want to use it.
-	\end{alertblock}
-\end{frame}
-}
-
-\section{Elements}
-
-\begin{frame}[fragile]{Typography}
-      \begin{verbatim}The theme provides sensible defaults to
-\emph{emphasize} text, \alert{accent} parts
-or show \textbf{bold} results.\end{verbatim}
-
-  \begin{center}becomes\end{center}
-
-  The theme provides sensible defaults to \emph{emphasize} text,
-  \alert{accent} parts or show \textbf{bold} results.
+\begin{center}
+	¿Qué resultados se obtienen al ejecutar las acciones sugeridas?
+\end{center}
 \end{frame}
 
-\begin{frame}{Font feature test}
-  \begin{itemize}
-    \item Regular
-    \item \textit{Italic}
-    \item \textsc{SmallCaps}
-    \item \textbf{Bold}
-    \item \textbf{\textit{Bold Italic}}
-    \item \textbf{\textsc{Bold SmallCaps}}
-    \item \texttt{Monospace}
-    \item \texttt{\textit{Monospace Italic}}
-    \item \texttt{\textbf{Monospace Bold}}
-    \item \texttt{\textbf{\textit{Monospace Bold Italic}}}
-  \end{itemize}
+\begin{frame}[fragile]{Listas, tuplas y diccionarios}
+	\begin{description}
+		\item[Listas] Contienen elementos separados por comas escritos entre corchetes.
+		\item[Tuplas] Son semejantes a las listas pero sus elementos están escritos entre paréntesis.
+		\item[Diccionarios] Sus elementos consisten en pares \emph{key-value} separados por comas y escritos entre llaves.
+	\end{description}
+
+\vspace{1em}
+
+\begin{center}
+	¿Qué otras diferencias existen entre estos tipos de datos?
+\end{center}
 \end{frame}
 
-\begin{frame}{Lists}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.33\textwidth}
-      Items
-      \begin{itemize}
-        \item Milk \item Eggs \item Potatos
-      \end{itemize}
+\begin{frame}[fragile]{Listas, tuplas y diccionarios}
+	\begin{minted}[bgcolor=gray!25!white]{python}
+# Lista 
+list = ['a', 'b', 3, 5, 7]
+	
+# Tupla
+tuple = ('a', 'b', 3, 5, 7) 
 
-    \column{0.33\textwidth}
-      Enumerations
-      \begin{enumerate}
-        \item First, \item Second and \item Last.
-      \end{enumerate}
+# Diccionario
+dict = {1:'Ana', 2:'Bruno', 3:'Carlos'}
 
-    \column{0.33\textwidth}
-      Descriptions
-      \begin{description}
-        \item[PowerPoint] Meeh. \item[Beamer] Yeeeha.
-      \end{description}
-  \end{columns}
+list.append(9) # Intente hacer lo mismo con la tupla
+list 
+list[0]
+list[2:3]
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Asignación de variables}
+\textbf{Softcoding} es un término que en programación hace referencia al hecho de obtener un valor o función desde una fuente externa. Es lo opuesto de \textbf{hardcoding}, término que hace referencia a programar valores y funciones en el código fuente.
+
+Evitar el hard-coding de valores comúnmente modificados es una buena práctica en progrmación.
+
+\alert{input()} es una función que permite que el usuario ingrese datos y asignarlos a variables definidas en el código del programa.
+	
+	\begin{minted}[bgcolor=gray!25!white]{python}
+Te = input('Ingrese la temperatura incial en Kelvin: ')
+Te = float(Te) 
+	\end{minted}
+	
+	\begin{center}
+		¿Por qué necesitamos la segunda línea?
+	\end{center}
+\end{frame}
+
+\section{Controladores de flujo}
+\begin{frame}[fragile]{Condicionales}
+   \begin{minted}[bgcolor=gray!25!white]{python}
+number = 23
+guess = int(input('Enter an integer : '))
+
+if guess == number:
+	print('Congratulations, you guessed it.')
+	print('(but you do not win any prizes!)')
+elif guess < number:
+	print('No, it is a little higher than that')
+else:
+	print('No, it is a little lower than that')
+
+print('Done')
+   \end{minted}
+\begin{center}
+	Analice el código presentado prestando especial atención a la \emph{identación}.
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Condicionales}
+ \begin{minted}[bgcolor=gray!25!white]{python}
+number = 23
+running = True # boolean
+
+while running:
+	guess = int(input('Enter an integer : '))
+	if guess == number:
+		print('Congratulations, you guessed it.')
+		running = False
+	elif guess < number:
+		print('No, it is higher than that.')
+	else:
+		print('No, it is lower than that.')
+print('Done')
+\end{minted}
+\begin{center}
+	¿Qué diferencia(s) hay entre los dos códigos presentados?
+\end{center}  
+\end{frame}
+
+\begin{frame}[fragile]{Condicionales}
+\begin{minted}[bgcolor=gray!25!white]{python}
+for i in range(1, 5):
+	print(i)
+else:
+print('The for loop is over')
+\end{minted}
 \end{frame}
 \begin{frame}{Animation}
   \begin{itemize}[<+- | alert@+>]
@@ -356,48 +377,24 @@ or show \textbf{bold} results.\end{verbatim}
 \end{frame}
 }
 
-\begin{frame}{References}
-  Some references to showcase [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
-\end{frame}
 
-\section{Conclusion}
 
-\begin{frame}{Summary}
-
-  Get the source of this theme and the demo presentation from
-
-  \begin{center}\url{github.com/matze/mtheme}\end{center}
-
-  The theme \emph{itself} is licensed under a
-  \href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons
-  Attribution-ShareAlike 4.0 International License}.
-
-  \begin{center}\ccbysa\end{center}
-
-\end{frame}
+\section{Repaso}
 
 \begin{frame}[standout]
-  Questions?
+  ¿Preguntas?
 \end{frame}
 
 \appendix
 
-\begin{frame}[fragile]{Backup slides}
-  Sometimes, it is useful to add slides at the end of your presentation to
-  refer to during audience questions.
-
-  The best way to do this is to include the \verb|appendixnumberbeamer|
-  package in your preamble and call \verb|\appendix| before your backup slides.
-
-  \themename will automatically turn off slide numbering and progress bars for
-  slides in the appendix.
-\end{frame}
-
-\begin{frame}[allowframebreaks]{References}
-
-  \bibliography{demo}
-  \bibliographystyle{abbrv}
-
+\begin{frame}{Enlaces de interés}
+	\begin{itemize}
+		\item \alert{Comunidad Python Argentina}\\ \url{http://www.python.org.ar}
+		\item \alert{AeroPython}\\ \url{https://github.com/AeroPython}
+		\item \alert{Tutorialspoint}\\ \url{https://www.tutorialspoint.com/index.htm}
+		\item \alert{https://www.gitbook.com/book/swaroopch/byte-of-python/details}\\ \url{https://python.swaroopch.com/control_flow.html}
+		\item \alert{Python programming}\\ \url{https://pythonprogramming.net}
+	\end{itemize}
 \end{frame}
 
 \end{document}

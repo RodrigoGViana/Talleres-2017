@@ -4,5 +4,5 @@
 \beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{3}{0}{1}
 \beamer@sectionintoc {2}{Funciones}{6}{0}{2}
 \beamer@sectionintoc {3}{Variables}{9}{0}{3}
-\beamer@sectionintoc {4}{Elements}{16}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{33}{0}{5}
+\beamer@sectionintoc {4}{Controladores de flujo}{16}{0}{4}
+\beamer@sectionintoc {5}{Repaso}{32}{0}{5}

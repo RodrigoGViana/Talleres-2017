@@ -38,7 +38,7 @@
 \headcommand {\beamer@framepages {14}{14}}
 \headcommand {\slideentry {3}{0}{15}{15/15}{}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\sectionentry {4}{Elements}{16}{Elements}{0}}
+\headcommand {\sectionentry {4}{Controladores de flujo}{16}{Controladores de flujo}{0}}
 \headcommand {\beamer@sectionpages {9}{15}}
 \headcommand {\beamer@subsectionpages {9}{15}}
 \headcommand {\slideentry {4}{0}{16}{16/16}{}{0}}
@@ -67,30 +67,24 @@
 \headcommand {\beamer@framepages {30}{30}}
 \headcommand {\slideentry {4}{0}{28}{31/31}{}{0}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\slideentry {4}{0}{29}{32/32}{}{0}}
+\headcommand {\sectionentry {5}{Repaso}{32}{Repaso}{0}}
+\headcommand {\beamer@sectionpages {16}{31}}
+\headcommand {\beamer@subsectionpages {16}{31}}
+\headcommand {\slideentry {5}{0}{29}{32/32}{}{0}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\sectionentry {5}{Conclusion}{33}{Conclusion}{0}}
-\headcommand {\beamer@sectionpages {16}{32}}
-\headcommand {\beamer@subsectionpages {16}{32}}
 \headcommand {\slideentry {5}{0}{30}{33/33}{}{0}}
 \headcommand {\beamer@framepages {33}{33}}
-\headcommand {\slideentry {5}{0}{31}{34/34}{}{0}}
-\headcommand {\beamer@framepages {34}{34}}
-\headcommand {\slideentry {5}{0}{32}{35/35}{}{0}}
-\headcommand {\beamer@framepages {35}{35}}
 \headcommand {\partentry {Ap\'{e}ndice}{1}}
-\headcommand {\beamer@partpages {1}{35}}
-\headcommand {\beamer@sectionpages {33}{35}}
-\headcommand {\beamer@subsectionpages {33}{35}}
-\headcommand {\beamer@appendixpages {36}}
-\headcommand {\slideentry {5}{0}{33}{36/36}{}{1}}
-\headcommand {\beamer@framepages {36}{36}}
-\headcommand {\slideentry {5}{0}{34}{37/37}{}{1}}
-\headcommand {\beamer@framepages {37}{37}}
-\headcommand {\beamer@partpages {36}{37}}
-\headcommand {\beamer@subsectionpages {36}{37}}
-\headcommand {\beamer@sectionpages {36}{37}}
-\headcommand {\beamer@documentpages {37}}
-\headcommand {\def \inserttotalframenumber {2}}
-\headcommand {\def \inserttotalframenumber {25}}
-\headcommand {\def \appendixtotalframenumber {2}}
+\headcommand {\beamer@partpages {1}{33}}
+\headcommand {\beamer@sectionpages {32}{33}}
+\headcommand {\beamer@subsectionpages {32}{33}}
+\headcommand {\beamer@appendixpages {34}}
+\headcommand {\slideentry {5}{0}{31}{34/34}{}{1}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\beamer@partpages {34}{34}}
+\headcommand {\beamer@subsectionpages {34}{34}}
+\headcommand {\beamer@sectionpages {34}{34}}
+\headcommand {\beamer@documentpages {34}}
+\headcommand {\def \inserttotalframenumber {1}}
+\headcommand {\def \inserttotalframenumber {23}}
+\headcommand {\def \appendixtotalframenumber {1}}

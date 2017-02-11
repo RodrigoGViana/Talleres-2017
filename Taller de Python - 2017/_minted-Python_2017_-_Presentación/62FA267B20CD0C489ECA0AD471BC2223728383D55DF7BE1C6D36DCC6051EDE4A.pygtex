@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{number} \PYG{o}{=} \PYG{l+m+mi}{23}
+\PYG{n}{guess} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Enter an integer : \PYGZsq{}}\PYG{p}{))}
+
+\PYG{k}{if} \PYG{n}{guess} \PYG{o}{==} \PYG{n}{number}\PYG{p}{:}
+	\PYG{k}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Congratulations, you guessed it.\PYGZsq{}}\PYG{p}{)}
+	\PYG{k}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}(but you do not win any prizes!)\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{elif} \PYG{n}{guess} \PYG{o}{\PYGZlt{}} \PYG{n}{number}\PYG{p}{:}
+	\PYG{k}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}No, it is a little higher than that\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{else}\PYG{p}{:}
+	\PYG{k}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}No, it is a little lower than that\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Done\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}

@@ -1,4 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n}{Te} \PYG{o}{=} \PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Ingrese la temperatura incial en Kelvin: \PYGZsq{}}\PYG{p}{)}
-\PYG{n}{Te} \PYG{o}{=} \PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{Te}\PYG{p}{)}
-\end{Verbatim}

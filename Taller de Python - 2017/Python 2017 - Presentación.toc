@@ -1,9 +1,0 @@
-\select@language {spanish}
-\beamer@endinputifotherversion {3.36pt}
-\select@language {spanish}
-\beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{3}{0}{1}
-\beamer@sectionintoc {2}{Funciones}{10}{0}{2}
-\beamer@sectionintoc {3}{Variables}{13}{0}{3}
-\beamer@sectionintoc {4}{Controladores de flujo}{20}{0}{4}
-\beamer@sectionintoc {5}{Repaso}{25}{0}{5}
-\beamer@sectionintoc {6}{Fin de la primera clase}{30}{1}{6}

@@ -1,0 +1,305 @@
+\documentclass[10pt]{beamer}
+\hypersetup{pdfpagemode=FullScreen}
+\usepackage[spanish, es-tabla]{babel}  
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+
+% ----- Tiene que ver con el tema de la presentación -----------------------------
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+%---------------------------------------------------------------------------------
+\usepackage{minted}    % Formato de python
+\usepackage{xcolor}
+\usepackage{gensymb} % Para generar ciertos símbolos en modo texto.
+
+\title{Taller de Python}
+\subtitle{Clase II}
+% \date{\today}
+\date{}
+\author{Comisión de Talleres}
+\institute{Centro de Estudiantes Tecnológicos}
+%\titlegraphic{\hfill\includegraphics[height=1.5cm]{FondoACET}}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Tabla de contenidos}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Numpy}
+\begin{frame}{¿De qué se trata?}
+\textbf{NumPy} es un paquete fundamental para la programación científica que proporciona un objeto tipo \alert{array} para almacenar datos de forma eficiente y una serie de funciones para operar y manipular esos datos. 
+
+Los arrays proporcionados por NumPy son más eficientes que las listas y nos permiten realizar diferentes cálculos.
+
+Para conocer más de lo que ofrece esta librería ir a:
+
+\begin{center}
+	\url{http://www.numpy.org/}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Importando}
+Para utilizar esta librería es necesario importarla.
+\begin{minted}[bgcolor=gray!25!white]{python}
+import numpy
+import numpy as np 
+from numpy import * 
+\end{minted}
+\begin{center}
+	¿Da lo mismo ocupar cualquiera de estas opciones?
+\end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]{¿Qué nos ofrece?}
+Por medio del comando \alert{dir()} es posible saber qué ofrece esta librería.
+\begin{minted}[bgcolor=gray!25!white]{python}
+dir(numpy) 
+\end{minted}
+Para saber un poco más acerca de algún elemento en particular, es necesario tener en cuenta la plataforma de trabajo que se esté utilizando.
+\begin{minted}[bgcolor=gray!25!white]{python}
+numpy.array? # Jupyter notebook
+\end{minted}
+\end{frame}
+
+\begin{frame}{Ejemplo}
+Dado el siguiente conjunto de reacciones en paralelo, hallar expresiones válidas para las velocidades de reacción.
+
+$$
+\begin{aligned}
+A \xrightarrow{k_{1}}B\\
+A \xrightarrow{k_{2}}C\\
+A \xrightarrow{k_{3}}D\\
+\end{aligned}
+$$
+
+\vspace{1em}
+
+\begin{description}
+	\item[Concentraciones iniciales]$C_{A0} = 1$ y $C_{B0} = C_{C0} = C_{D0} = 0$ 
+	\item[Constantes cinéticas] $k_1 = 4$, $k_2 = 2$ y $ k_3 = 1$
+\end{description}
+\end{frame}
+
+\begin{frame}[fragile]{Números}
+\begin{minted}{python}
+'''A las variables a, b y c se le asignan distintos 
+valores, como se muestra a continuación.'''
+
+a = 10 
+b = 10.0
+c = 10 + 10j
+	
+# Utilice la función type() para saber de qué tipo de
+# dato se trata
+\end{minted}
+\begin{center}
+	¿Qué diferencias existen entre los distintos tipos? ¿es posible convertir de un tipo a otro?
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Strings}
+Los \emph{Strings} en Python se identifican como un conjunto de caracteres contiguos encerrados entre comillas.
+\begin{minted}[bgcolor=gray!25!white]{python}
+'Mi nombre es...' 
+\end{minted}
+El texto entre comillas es un tipo de dato y es por lo tanto posible operar con él.
+\begin{minted}[bgcolor=gray!25!white]{python}
+a = 'nombre'
+type(a)
+len(a)
+b = a[0]
+2 * a 
+\end{minted}
+
+\begin{center}
+	¿Qué resultados se obtienen al ejecutar las acciones sugeridas?
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Listas, tuplas y diccionarios}
+	\begin{description}
+		\item[Listas] Contienen elementos separados por comas escritos entre corchetes.
+		\item[Tuplas] Son semejantes a las listas pero sus elementos están escritos entre paréntesis.
+		\item[Diccionarios] Sus elementos consisten en pares \emph{key-value} separados por comas y escritos entre llaves.
+	\end{description}
+
+\vspace{1em}
+
+\begin{center}
+	¿Qué otras diferencias existen entre estos tipos de datos?
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Listas, tuplas y diccionarios}
+	\begin{minted}{python}
+# Lista 
+list = ['a', 'b', 3, 5, 7]
+	
+# Tupla
+tuple = ('a', 'b', 3, 5, 7) 
+
+# Diccionario
+dict = {1:'Ana', 2:'Bruno', 3:'Carlos'}
+
+list.append(9) # Intente hacer lo mismo con la tupla
+list 
+list[0]
+list[2:3]
+	\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Asignación de variables}
+\textbf{Softcoding} es un término que en programación hace referencia al hecho de obtener un valor o función desde una fuente externa. Es lo opuesto de \textbf{hardcoding}, término que hace referencia a programar valores y funciones en el código fuente.
+
+Evitar el hard-coding de valores comúnmente modificados es una buena práctica en programación.
+
+\alert{input()} es una función que permite que el usuario ingrese datos y asignarlos a variables definidas en el código del programa.
+	
+	\begin{minted}[bgcolor=gray!25!white]{python}
+Te = input('Ingrese la temperatura incial en Kelvin: ')
+Te = float(Te) 
+	\end{minted}
+	
+	\begin{center}
+		¿Por qué necesitamos la segunda línea?
+	\end{center}
+\end{frame}
+
+\section{Controladores de flujo}
+\begin{frame}[fragile]{Condicionales}
+   \begin{minted}{python}
+number = 23
+guess = int(input('Enter an integer : '))
+
+if guess == number:
+	print('Congratulations, you guessed it.')
+	print('(but you do not win any prizes!)')
+elif guess < number:
+	print('No, it is a little higher than that')
+else:
+	print('No, it is a little lower than that')
+
+print('Done')
+   \end{minted}
+\begin{center}
+	Analice el código presentado prestando especial atención a la \emph{identación}.
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Condicionales}
+ \begin{minted}{python}
+number = 23
+running = True # boolean
+
+while running:
+	guess = int(input('Enter an integer : '))
+	if guess == number:
+		print('Congratulations, you guessed it.')
+		running = False
+	elif guess < number:
+		print('No, it is higher than that.')
+	else:
+		print('No, it is lower than that.')
+print('Done')
+\end{minted}
+\begin{center}
+	¿Qué diferencia(s) hay entre los dos códigos presentados?
+\end{center}  
+\end{frame}
+
+\begin{frame}[fragile]{Condicionales}
+\begin{minted}{python}
+for i in range(1, 5):
+	print(i)
+else:
+	print('The for loop is over')
+\end{minted}
+
+\begin{center}
+	¿Qué diferencia(s) supone ocupar \textbf{for} en lugar de \textbf{while}?  
+\end{center}
+\end{frame}
+
+\begin{frame}[standout]
+	¿Preguntas?
+\end{frame}
+
+\section{Repaso}
+\begin{frame}{Resumen}
+	\begin{table}
+		\caption{Operadores ariméticos}
+		\begin{tabular}{lr}
+			\toprule
+			Símbolo&Interpretación\\
+			\midrule
+		$=$ &Igualdad\\
+		$+$ &Suma\\
+		$-$ &Resta\\
+		$*$ &Multiplicación\\
+		$**$&Potencia\\
+		$/$ &División\\
+		$//$&Parte entera del cociente\\
+		$\%$&Resto de la división\\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Resumen}
+	\begin{table}
+		\caption{Operadores de relación}
+		\begin{tabular}{lr}
+			\toprule
+			Símbolo&Interpretación\\
+			\midrule
+			$==$ &Igualdad\\
+			$!=$&Desigualdad\\
+			$<$ &Menor a\\
+			$>$ &Mayor a\\
+			$<=$ &Menor o igual\\
+			$>=$ &Mayor o igual\\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Resumen}
+	\begin{table}
+		\caption{Controladores de flujo.}
+		\begin{tabular}{lr}
+			\toprule
+			Controlador&Intepretación\\
+			\midrule
+			if...:&Si se cumple tal cosa, hacer...\\
+			elif...:&Si en cambio se cumple otra cosa, hacer...\\ 
+			else:&Para todos los demás casos, hacer...\\
+			for ... in ...:&Para los elementos en una lista, hacer...\\
+			while...:&Mientras se cumpla tal cosa, hacer...\\ 
+			\bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+\appendix
+
+\begin{frame}{Enlaces de interés}
+	\begin{itemize}
+		\item \alert{Comunidad Python Argentina}\\ \url{http://www.python.org.ar}
+		\item \alert{AeroPython}\\ \url{https://github.com/AeroPython}
+		\item \alert{Tutorialspoint}\\ \url{https://www.tutorialspoint.com/index.htm}
+		\item \alert{Byte of Python}\\ \url{https://python.swaroopch.com/control_flow.html}
+		\item \alert{Python programming}\\ \url{https://pythonprogramming.net}
+	\end{itemize}
+\end{frame}
+\section{Fin de la segunda clase}
+\end{document}

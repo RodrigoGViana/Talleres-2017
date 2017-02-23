@@ -61,7 +61,7 @@ Para conocer más de lo que ofrece esta librería ir a:
 
 \begin{frame}[fragile]{Importando}
 Para utilizar esta librería es necesario importarla.
-\begin{minted}[bgcolor=gray!25!white]{python}
+\begin{minted}[bgcolor=brown!10!white]{python}
 import numpy
 import numpy as np 
 from numpy import * 
@@ -74,11 +74,11 @@ from numpy import *
 
 \begin{frame}[fragile]{¿Qué nos ofrece?}
 Por medio del comando \alert{dir()} es posible saber qué ofrece este paquete.
-\begin{minted}[bgcolor=gray!25!white]{python}
+\begin{minted}[bgcolor=brown!10!white]{python}
 dir(numpy) 
 \end{minted}
 Para saber un poco más acerca de algún elemento en particular:
-\begin{minted}[bgcolor=gray!25!white]{python}
+\begin{minted}[bgcolor=brown!10!white]{python}
 help(numpy.array)
 \end{minted}
 \end{frame}
@@ -88,7 +88,7 @@ help(numpy.array)
 	\begin{center}
 		¿Qué ocurre cuando un array está formado por datos de diferentes tipos?
 	\end{center}
-	\begin{minted}[bgcolor=gray!25!white]{python}
+	\begin{minted}[bgcolor=brown!10!white]{python}
 np_array1 = np.array([1,2,False])
 np_array1.dtype 
 	\end{minted}
@@ -101,7 +101,7 @@ np_array1.dtype
 \begin{frame}[fragile]{numpy.array()}
 	Que los datos sean de un único tipo permite llevar a cabo cálculos de forma muy eficiente. Sin embargo, es importante hacer notar también que existen otras diferencias con las listas. 
 	
-	\begin{minted}[bgcolor=gray!25!white]{python}
+	\begin{minted}[bgcolor=brown!10!white]{python}
 >>> np_array1 = np.array([1, 2, False])
 >>> np_array2 = np.array([True, 3, 4])
 >>> np_array3 = np_array1 + np_array2
@@ -113,5 +113,145 @@ array([2, 5, 4])
 	\end{minted}
 \end{frame}
 
+\section{Matplotlib}
+\begin{frame}{Matplotlib}
+	Matplotlib es una librería para realizar gráficos en 2D capaz de generar figuras de excelente calidad.
+	
+	El siguiente enlace nos lleva a su documentación, donde es posible encontrar gran variedad de ejemplos con sus respectivos códigos.
+	
+	\begin{center}
+		\url{http://matplotlib.org/}
+	\end{center}  
+\end{frame}
+
+\begin{frame}[fragile]{Matplotlib.pyplot}
+	Lo que ocuparemos es un subpaquete de matplotlib llamado \alert{pyplot}, y lo importaremos de la siguiente manera:
+	\vspace{1em}
+	\begin{minted}[bgcolor=brown!10!white]{python}
+import matplotlib.pyplot as plt
+	\end{minted}
+	Importando numpy como np y matplotlib.pyplot como plt
+	\begin{minted}[bgcolor=brown!10!white]{python}
+t = np.linspace(1,10,500)
+y = np.sin(2*t)
+
+plt.plot(t,y)
+plt.show()
+	\end{minted}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+		\scalebox{0.55}{\includegraphics{figure_sin}}
+		\caption{Gráfico de la función $y = sin(2t)$}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Ejemplo}
+	Si tenemos datos en un archivo de texto, numpy nos ofrece la posibilidad de importarlos con el siguiente comando. Los datos son asignados a nuestra variable \alert{Escalon}.
+	\begin{minted}[bgcolor=brown!10!white]{python}
+Escalon = np.loadtxt('Sis_subamortiguado.txt', 
+		delimiter=',')
+	\end{minted}
+
+	La primera columna son valores de tiempo y la segunda el valor de cambio de una variable bajo estudio.
+	
+	\begin{minted}[bgcolor=brown!10!white]{python}
+plt.plot (Escalon[0], Escalon[1])
+plt.show()
+	\end{minted}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+		\scalebox{0.55}{\includegraphics{figure_sub}}
+		\caption{Sistema subamortiguado}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Personalización}
+	El fragmento de código mostrado a continuación nos enseña como:
+	\begin{itemize}
+		\item variar el grosor del trazo con \alert{linewidth},
+		\item añadir etiquetas a los ejes con \alert{xlabel} y \alert{ylabel},
+		\item añadir un título al gráfico con \alert{title}, y
+		\item modificar los límites de los ejes con \alert{axis}.
+	\end{itemize}
+	\begin{minted}[bgcolor=brown!10!white]{python}
+plt.plot(Escalon[0], Escalon[1], linewidth=2.0)
+plt.xlabel('Tiempo')
+plt.ylabel('Respuesta')
+plt.title('Sistema subamortiguado')
+plt.axis([0, 20, 0, 0.35])
+	\end{minted}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+		\scalebox{0.55}{\includegraphics{figure_sub2}}
+		\caption{Gráfico con títulos, etiquetas y escala modificada.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Personalización}
+
+La función \textbf{plot} grafica líneas rectas y le basta con dos puntos, en el fragmento de código se traza una recta horizontal que pasa por los puntos (0, 0.20) y (20,0.20).
+\vspace{1em}
+
+Es posible incorporar leyendas para una descripción más detallada, modificar el tipo de trazo y el color.
+
+	\begin{minted}[bgcolor=brown!10!white]{python}
+plt.plot((0,20),(0.20,0.20), '--k', 
+label='Estado estacionario')
+
+plt.legend(loc='best')
+	\end{minted}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+		\scalebox{0.55}{\includegraphics{figure_sub3}}
+		\caption{Gráfico con línea adicional y leyenda.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Personalización}
+
+Se puede incorporar texto en una determinada posición con la función \alert{text}. En el fragmento de código se muestra como modificar la fuente por medio de un diccionario.
+
+	\begin{minted}[bgcolor=brown!10!white]{python}
+font = {'family': 'serif',
+'color':  'darkred',
+'weight': 'normal',
+'size': 12,
+}
+
+plt.text(2, 0.05, 'Es posible incorporar texto.',
+		 fontdict=font)
+	\end{minted}
+\end{frame}
+
+\begin{frame}
+	\begin{figure}
+		\scalebox{0.55}{\includegraphics{figure_sub4}}
+		\caption{Gráfico con texto aclaratorio.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[standout]
+	¿Preguntas?
+\end{frame}
+
+\appendix
+
+\begin{frame}{Enlaces de interés}
+	\begin{itemize}
+		\item \alert{Comunidad Python Argentina}\\ \url{http://www.python.org.ar}
+		\item \alert{AeroPython}\\ \url{https://github.com/AeroPython}
+		\item \alert{Tutorialspoint}\\ \url{https://www.tutorialspoint.com/index.htm}
+		\item \alert{Byte of Python}\\ \url{https://python.swaroopch.com/control_flow.html}
+		\item \alert{Python programming}\\ \url{https://pythonprogramming.net}
+	\end{itemize}
+\end{frame}
 \section{Fin de la segunda clase}
 \end{document}

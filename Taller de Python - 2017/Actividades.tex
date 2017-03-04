@@ -16,8 +16,8 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{Comisión de Talleres}
-\chead{Taller de Python}
+\lhead{\textcolor{blue!65!black}{Comisión de Talleres}}
+\chead{\textbf{Taller de Python}}
 \rhead{CET 2017}
 \rfoot{}
 
@@ -29,7 +29,7 @@
 	\item Defina una función que tome como argumentos tres valores numéricos y devuelva el mayor de ellos.
 	\item Defina una función que tome un carácter y devuelva True si es una vocal, y que de lo contrario devuelva False\footnote{Es importante recordar que Python diferencia entre mayúsculas y minúsculas.}.
 	\item Defina una función que devuelva la longitud de su argumento, sea este una lista o cadena de caracteres.
-	\item Defina una función que devuelva el mayor valor de una lista de cualquier longitud.
+	\item Defina una función que devuelva el mayor valor de una lista de números.
 	\item Python cuenta con funciones ya definidas que llevan a cabo estas tareas ¿cuáles son?
 \end{enumerate}
 
@@ -37,4 +37,59 @@
 	\textit{El secreto no está en saber todo sino en saber donde hallar las respuestas que necesitamos. Buena suerte.}
 \end{center}
 
+\newpage
+
+\textbf{Paquetes}
+
+\vspace{0.7em}
+
+Considere una cañería con las siguientes características y realice las actividades propuestas:
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lll}
+		\toprule
+		Datos &&\\ 
+		\midrule
+		Diámetro nominal&3&pulg\\
+		Cédula&40&\\
+		Diámetro interior&0.0779&m\\
+		Rugosidad absoluta&0.05&mm\\
+		Longitud&9.60&m\\
+		Caudal másico&1&$kg \cdot s^{-1}$\\
+		Fluido&Ácido sulfúrico 94\%&\\
+		Temperatura&52.78&$\degree$C\\
+		Densidad&1801.6&$kg \cdot m^{3}$\\
+		Viscosidad&0.01&$Pa \cdot s$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}  
+
+\begin{enumerate}
+	\item Diseñe un programa que calcule el \emph{factor de fricción} para el flujo de cualquier fluido a través de tuberías y tubos, por medio de las ecuaciones \eqref{flam} y \eqref{ftur}. El programa debe calcular el número de \emph{Reynolds} y la \emph{rugosidad relativa}. Después, debe tomar decisiones respecto de lo siguiente:
+	
+	\begin{itemize}
+		\item Si $N_{R} < 2000$, emplee la ecuación \eqref{flam}.
+		\item Si $2000 < N_{R} < 4000$, el flujo está en el rango de crítico y no es posible calcular un valor confiable de \emph{f}. Genere un mensaje acorde para el usuario del programa.
+		\item Si $N_{R} > 4000$, el flujo es turbulento. Emplee la ecuación \eqref{ftur} para calcular \emph{f}.
+		\item Imprima $N_{R}, D/\epsilon$ y $f$.
+	\end{itemize}
+	
+	\item Incorpore el programa 1 a otro mejorado para calcular la pérdida de carga para el flujo de cualquier fluido incompresible a través de una tubería de cualquier tamaño. Utilice la ecuación de Darcy, Ec. \eqref{Darcy}  
+	
+	\item Continúe agregando funciones, esta vez teniendo en cuenta las ecuaciones \eqref{uL} y \eqref{uT} represente gráficamente el perfil de velocidad. La primera es válida para régimen laminar, mientras que la segunda lo es para régimen turbulento.
+\end{enumerate}
+
+\begin{tcolorbox}[colback=black!5!white,colframe=white!50!black,title=Ecuaciones a utilizar]
+	\begin{align}
+	N_R &= \dfrac{vD\rho}{\mu}\\[1em]
+	f &= 64/N_{R}\label{flam}\\[1em]
+	f &= \dfrac{0.25}{
+		\left[log\left(\dfrac{1}{3.7 \cdot (D/\epsilon)}+
+		\dfrac{5.74}{N^{0.9}_{R}}\right)\right]^{2}}\label{ftur}\\[1em]
+	h_f &= f \dfrac{L}{D} \dfrac{v^2}{2g}\label{Darcy}\\[1em]
+	U &= 2v[1-(r/r_{0})^{2}]\label{uL}\\[1em]
+	U &= v[1 + 1.43 \sqrt{f}+2.15 \sqrt{f}\log(1-r/r_{0})]\label{uT}
+	\end{align}
+\end{tcolorbox}
 \end{document}
